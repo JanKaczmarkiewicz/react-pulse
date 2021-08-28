@@ -2,23 +2,21 @@
   "name": "react-pulse",
   "version": "1.0.0",
   "description": "Personal blog about react",
-  "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JanKaczmarkiewicz/react-pulse.git"
   },
   "keywords": [
     "react",
     "blog"
   ],
-  "author": "https://github.com/JanKaczmarkiewicz/",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/webpack-env": "^1.16.2",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "webpack": "^5.51.1",
