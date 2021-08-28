@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Personal blog about react",
   "scripts": {
-    "start": "webpack serve --mode development"
+    "dev": "webpack serve --mode development",
+    "type-check:watch": "tsc --watch"
   },
   "keywords": [
     "react",
@@ -16,9 +17,11 @@
     "@babel/preset-typescript": "^7.15.0",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
+    "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.16.2",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
+    "typescript": "^4.4.2",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"

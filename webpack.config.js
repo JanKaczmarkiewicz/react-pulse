@@ -1,11 +1,13 @@
+const path = require("path");
 const webpack = require("webpack");
 
-module.exports = {
+/** @type { import('webpack').Configuration } */
+const config = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: path.resolve(__dirname, "src", "index.tsx"),
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    static: "./dist",
+    static: path.resolve(__dirname, "dist"),
     hot: true,
     port: 3000,
   },
@@ -23,3 +25,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = config;
