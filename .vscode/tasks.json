@@ -1,29 +1,29 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "ts-checker",
-      "group": "build",
-      "type": "npm",
-      "script": "type-check:watch",
-      "presentation": {
-        "group": "Application"
-      }
-    },
-    {
-      "label": "webpack-dev-server",
-      "group": "build",
-      "type": "npm",
-      "script": "dev",
-      "presentation": {
-        "group": "Application"
-      }
-    },
-    {
-      "label": "Develop",
-      "group": "build",
-      "dependsOn": ["webpack-dev-server", "ts-checker"],
-      "problemMatcher": []
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ts-checker",
+            "group": "build",
+            "type": "npm",
+            "script": "type-check:watch",
+            "presentation": {
+                "group": "Application"
+            }
+        },
+        {
+            "label": "webpack-dev-server",
+            "group": "build",
+            "type": "npm",
+            "script": "dev",
+            "presentation": {
+                "group": "Application"
+            }
+        },
+        {
+            "label": "Develop",
+            "group": "build",
+            "dependsOn": ["webpack-dev-server", "ts-checker"],
+            "problemMatcher": []
+        }
+    ]
 }
