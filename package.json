@@ -1,0 +1,23 @@
+{
+  "name": "react-pulse",
+  "version": "1.0.0",
+  "description": "Personal blog about react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanKaczmarkiewicz/react-pulse.git"
+  },
+  "keywords": [
+    "react",
+    "blog"
+  ],
+  "author": "https://github.com/JanKaczmarkiewicz/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanKaczmarkiewicz/react-pulse/issues"
+  },
+  "homepage": "https://github.com/JanKaczmarkiewicz/react-pulse#readme"
+}
