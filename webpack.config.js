@@ -1,23 +1,29 @@
-const webpack = require("webpack");
+const path = require('path')
+const webpack = require('webpack')
 
-module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
-  plugins: [new webpack.HotModuleReplacementPlugin()],
-  devServer: {
-    static: "./dist",
-    hot: true,
-    port: 3000,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
-    ],
-  },
-};
+/** @type { import('webpack').Configuration } */
+const config = {
+    mode: 'development',
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    plugins: [new webpack.HotModuleReplacementPlugin()],
+    devServer: {
+        static: path.resolve(__dirname, 'dist'),
+        hot: true,
+        port: 3000,
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+    },
+    module: {
+        rules: [
+            {
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+        ],
+    },
+}
+
+module.exports = config
