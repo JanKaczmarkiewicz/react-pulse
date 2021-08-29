@@ -4,7 +4,7 @@ const webpack = require('webpack')
 /** @type { import('webpack').Configuration } */
 const config = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+    entry: path.resolve(__dirname, 'src', 'app', 'index.tsx'),
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
         static: path.resolve(__dirname, 'dist'),
