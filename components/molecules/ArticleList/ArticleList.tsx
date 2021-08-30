@@ -2,6 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import colors from "../../../styles/colors";
+import { Article } from "../../../utils/posts";
 
 const PostContainer = styled.a`
   display: flex;
@@ -39,31 +40,20 @@ const PostsList = styled.div`
   gap: 56px;
 `;
 
-const articles = Array(4)
-  .fill(undefined)
-  .map((_, i) => ({
-    id: i,
-    href: "/react-18-progressive-hydration",
-    title: "React 18: Progressive hydration",
-    excerpt: `New feature added to serverside rendering. Each Suspanse boundary slices app into multiple zones with different priority of loading related javascript code...`,
-  }));
-
-const ArticleList = () => {
-  return (
-    <PostsList>
-      {articles.map(({ id, href, title, excerpt }) => (
-        <Link key={id} href={href} passHref>
-          <PostContainer>
-            <PostTitle>{title}</PostTitle>
-            <PostExcerpt>{excerpt}</PostExcerpt>
-            <PostCallToAction>
-              Read more <AiOutlineArrowRight color={colors.secondaryText} />
-            </PostCallToAction>
-          </PostContainer>
-        </Link>
-      ))}
-    </PostsList>
-  );
-};
+const ArticleList = ({ articles }: { articles: Article[] }) => (
+  <PostsList>
+    {articles.map(({ excerpt, href, title }) => (
+      <Link key={href} href={href} passHref>
+        <PostContainer>
+          <PostTitle>{title}</PostTitle>
+          <PostExcerpt>{excerpt}</PostExcerpt>
+          <PostCallToAction>
+            Read more <AiOutlineArrowRight color={colors.secondaryText} />
+          </PostCallToAction>
+        </PostContainer>
+      </Link>
+    ))}
+  </PostsList>
+);
 
 export default ArticleList;

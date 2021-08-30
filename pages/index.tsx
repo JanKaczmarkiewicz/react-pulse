@@ -1,10 +1,11 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import styled, { css } from "styled-components";
 import Header from "../components/molecules/Header/Header";
 import Footer from "../components/molecules/Footer/Footer";
 import ArticleList from "../components/molecules/ArticleList/ArticleList";
+import { Article, getPosts } from "../utils/posts";
 
 const sectionStyles = css`
   width: min(800px, calc(100vw - 48px));
@@ -30,7 +31,15 @@ const FooterWrapper = styled.footer`
   ${sectionStyles}
 `;
 
-const Home: NextPage = () => (
+type Props = {
+  posts: Article[];
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: { posts: await getPosts() },
+});
+
+const Home: NextPage<Props> = ({ posts }) => (
   <PageContainer>
     <Head>
       <title>React Pulse</title>
@@ -41,7 +50,7 @@ const Home: NextPage = () => (
       <Header />
     </HeaderWrapper>
     <Main>
-      <ArticleList />
+      <ArticleList articles={posts} />
     </Main>
     <FooterWrapper>
       <Footer />
