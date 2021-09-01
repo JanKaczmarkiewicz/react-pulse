@@ -1,9 +1,10 @@
 import path from "path";
 import { promises as fs } from "fs";
+
 import matter from "gray-matter";
 import { AwaitReturnType } from "./types";
 
-const PATH_TO_ARTICLES = path.join(process.cwd(), "pages", "articles");
+const PATH_TO_ARTICLES = path.join(process.cwd(), "articles");
 
 export const getPostBySlug = async (slug: string) => {
   const fullPath = path.join(PATH_TO_ARTICLES, slug, `index.mdx`);
@@ -13,7 +14,7 @@ export const getPostBySlug = async (slug: string) => {
     content,
     excerpt = "",
   } = matter(fileContents, { excerpt: true });
-  return { title, content, href: `/articles/${slug}`, excerpt };
+  return { title, content, href: `/articles/${slug}`, slug, excerpt };
 };
 
 export const getPosts = async () => {
