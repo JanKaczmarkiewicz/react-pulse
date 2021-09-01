@@ -1,12 +1,12 @@
 import type { AppProps } from "next/app";
 import GlobalStyle from "../styles/GlobalStyle";
+import "prism-themes/themes/prism-vsc-dark-plus.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </>
-  );
-}
-export default MyApp;
+const App = ({ Component, pageProps }: AppProps) => (
+  <>
+    <GlobalStyle />
+    <Component {...pageProps} />
+  </>
+);
+
+export default App;
