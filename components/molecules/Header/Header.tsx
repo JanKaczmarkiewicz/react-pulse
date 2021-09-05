@@ -5,7 +5,7 @@ import logoSrc from "../../../public/logo.svg";
 const Header = () => (
   <Link href="/" passHref>
     <a>
-      <Image src={logoSrc} alt="React Pulse logo" />
+      <Image src={logoSrc} alt="React Pulse logo" unoptimized />
     </a>
   </Link>
 );
