@@ -9,12 +9,9 @@ type Props = {
   posts: Article[];
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  console.log(await getPosts());
-  return {
-    props: { posts: await getPosts() },
-  };
-};
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: { posts: await getPosts() },
+});
 
 const Home: NextPage<Props> = ({ posts }) => (
   <>
