@@ -16,10 +16,6 @@ const SocialLinkContainer = styled.a`
   gap: 8px;
 `;
 
-const SocialLinkText = styled.span`
-  font-size: 16px;
-`;
-
 const Footer = () => (
   <FooterWrapper>
     <b>Jan Kaczmarkiewicz</b>
@@ -28,21 +24,18 @@ const Footer = () => (
     <Link href="https://www.linkedin.com/in/jan-kaczmarkiewicz/" passHref>
       <SocialLinkContainer>
         <AiFillLinkedin />
-        <SocialLinkText>linkedin</SocialLinkText>
       </SocialLinkContainer>
     </Link>
 
     <Link href="https://github.com/JanKaczmarkiewicz/" passHref>
       <SocialLinkContainer>
         <AiFillGithub />
-        <SocialLinkText>github</SocialLinkText>
       </SocialLinkContainer>
     </Link>
 
     <Link href="/rss.xml" passHref>
       <SocialLinkContainer>
         <FaRssSquare />
-        <SocialLinkText>rss</SocialLinkText>
       </SocialLinkContainer>
     </Link>
   </FooterWrapper>
