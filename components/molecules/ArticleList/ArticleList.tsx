@@ -46,7 +46,7 @@ const ArticleList = ({ articles }: { articles: Article[] }) => (
       <Link key={href} href={href} passHref>
         <PostContainer>
           <PostTitle>{title}</PostTitle>
-          <PostExcerpt>{excerpt}</PostExcerpt>
+          {excerpt && <PostExcerpt>{excerpt}</PostExcerpt>}
           <PostCallToAction>
             Read more <AiOutlineArrowRight color={colors.secondaryText} />
           </PostCallToAction>

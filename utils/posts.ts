@@ -10,12 +10,23 @@ export const getPostBySlug = async (slug: string) => {
 
   const fileContents = await fs.readFile(pathToArticle, "utf8");
 
-  const { code, frontmatter } = await bundleMDX(fileContents);
+  const result = await bundleMDX(fileContents, {
+    grayMatterOptions: (options) => {
+      options.excerpt = true;
+      return options;
+    },
+  });
+
+  const {
+    code,
+    frontmatter,
+    matter: { excerpt = "" },
+  } = result;
 
   return {
     code,
     href: `/articles/${slug}`,
-    frontmatter,
+    excerpt,
     title: frontmatter.title,
   };
 };
